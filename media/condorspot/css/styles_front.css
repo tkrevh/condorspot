@@ -1,0 +1,191 @@
+/*
+@description:
+    theme: default condorspot.com theme
+    theme was designed for http://condorspot.com
+@version:   0.1
+@uri:   http://condorspot.com/
+@copyright: Gregor Ambrozic
+@author:    Gregor Ambrozic
+@author-uri:    http://insane.si
+*/
+
+/* GLOBAL STYLES */
+
+html {
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 100px 0 0 0;
+    padding: 0;
+    overflow-y: scroll;
+    text-align: center;
+    color: black;
+    font-weight: normal;
+    font-style: normal;
+    font-family: Tahoma, sans-serif;
+    font-size: 70%;
+    letter-spacing: 0.06em;
+    line-height: 1.4em;
+    background:#fff url("../img/bg.gif");
+}
+
+#header, #content, #footer, #logo {
+    margin: 0 auto;
+    width: 562px;
+}
+
+#header, #content{
+    background-color:white;
+}
+
+h1 {
+    font-size: 1.2em;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    outline: 0;
+    outline-style: none;
+    padding: 0 4px;
+    text-decoration: none;
+    color: darkorange;
+    border: 0;
+}
+
+a.opq, a.opq:hover {
+  height: 1px; /*IE bug prevents the filter / opacity to be applied on elements when there is no dimension property assigned in CSS.*/
+  filter: alpha(opacity = 100);
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+	opacity: 1;
+}
+
+a.opq {
+  filter: alpha(opacity = 50);
+  -moz-opacity: 0.5;
+  -khtml-opacity: 0.5;
+	opacity: 0.5;
+}
+
+img {
+	border: 0;
+}
+
+/* COLORS */
+
+.darkorange {
+    color: darkorange;
+}
+
+a:hover {
+    background-color: #fff;
+    color: darkred;
+}
+
+/* LOGO STYLES */
+
+#logo {
+    text-align: right;
+}
+
+#name {
+    font-size: 3em;
+    line-height: 36px;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    height: 50px;
+    padding: 0 6px 0 0;
+}
+
+/* ACCOUNT STYLES */
+
+#acc {
+    font-weight: bold;
+    padding: 0 6px 0 0;
+}
+
+/* HEADER STYLES */
+
+#header {
+    text-align: left;
+    padding: 20px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+.comp {
+    margin-top: 10px;
+    width: 560px;
+    clear: left;
+    -moz-border-radius: 5px 0 5px 0;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    border: 1px solid #ccc;
+    height: 74px;
+}
+
+.comp ul {
+    list-style: none;
+    margin: 0;
+    float: left;
+    padding: 20px 0 0 0;
+}
+
+.comp li, .comp li {
+    list-style: none;
+    white-space: nowrap;
+}
+
+.comp:hover {
+    background-color: #e9e8e8;
+}
+
+.cname {
+    color: #fff;
+    text-align: center;
+    width: 84px;
+    height: 54px!important;
+    height: 72px;
+    -moz-border-radius: 3px 0 0 0;
+    -webkit-border-top-left-radius: 3px;
+    font-size: 1em;
+    background: darkorange;
+}
+
+.cname li em {
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2em;
+    letter-spacing: 0.2em;
+}
+
+.cnav li em {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.4em;
+    padding-left: 5px;
+}
+
+.cnav li {
+    font-weight: bold;
+    margin: 0;
+    padding: 2px 6px 6px 6px;
+}
+
+.cnav li a {
+    padding: 4px 14px;
+}
+
+#footer {
+    margin-top: 50px;
+}
+
+#footer img{
+	vertical-align:bottom;
+}

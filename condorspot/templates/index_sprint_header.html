@@ -1,0 +1,20 @@
+<div id="nav">
+    <a href="/">home</a><a href="/competitors">competitors</a>
+</div>
+{% block header %}
+<div id="header">
+    <div id="logo">
+        <div id="name"><span class="darkorange">condor</span>spot</div>
+        <div id="acc"><span id="la"><a href="/profile">profile</a><a href="/login">login</a><a href="/register">register</a></span></div>
+    </div>
+    <div class="comp">
+        <ul class="cname">
+            <li><em>CSS</em></li>
+            <li>Sprint</li>
+        </ul>
+        <ul class="cnav">
+            <li><em>CondorSpot Sprint</em></li>
+            <li><a href="/sprint/info">info</a>{% if navigation_list %}|<a href="/sprint">stats</a>{% for url, class, style in navigation_list %}<a href="{{url}}"{{style}}>{{class}}</a>{% endfor %}{% else %}This really shouldnt happen :o{% endif %}</li>
+        </ul>
+    </div>
+</div>{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "index.html" %}{% block header %}
+<div id="header">
+    <div id="logo">
+        <div id="name"><span class="darkorange">condor</span>spot</div>
+        <div id="acc"><a href="/competitors">competitors</a><span id="la"><a href="/profile">profile</a><a href="/login">login</a><a href="/register">register</a></span></div>
+    </div>
+    <div class="comp">
+        <ul class="cname">
+            <li><em>CSC</em></li>
+            <li>Season 01</li>
+        </ul>
+        <ul class="cnav">
+            <li><em>CondorSpot Cup Season 01</em></li>
+            <li><a href="#">Coming in Autumn 2009</a></li>
+        </ul>
+    </div>
+    <div class="comp">
+        <ul class="cname">
+            <li><em>CSS</em></li>
+            <li>Sprint</li>
+        </ul>
+        <ul class="cnav">
+            <li><em>CondorSpot Sprint</em></li>
+            <li><a href="/sprint/info">info</a>{% if navigation_list %}|<a href="/sprint">stats</a>{% for url, class in navigation_list %}<a href="{{url}}">{{class}}</a>{% endfor %}{% else %}This really shouldnt happen :o{% endif %}</li>
+        </ul>
+    </div>
+</div>{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "index.html" %}{% block header %}{% include "index_header.html" %}{% endblock %}{% block content %}
+<div id="content">
+    <form name="formname" method="post" action="">
+        <ul class="ful fulnb">
+            <li>
+                <h1>Upload</h1>
+            </li>
+        </ul>
+        <ul class="ful">
+            <li>
+                <h1>Upload task files</h1>
+            </li>
+            <li>
+                <div class="label"><label for="file">Browse for IGC file</label></div>
+                <div id="labelfile"><input type="file" class="file" name="file" id="file" onchange="document.getElementById('filevalue').innerHTML = this.value;"/></div>
+            </li>
+            <li>
+                <div id="filevalue">&nbsp;</div>
+            </li>
+        </ul>
+        <ul class="ful fulnb">
+            <li>
+                <div class="label" style="width:154px;">&nbsp;</div>
+                <input type="submit" name="upload" id="upload" value="upload" class="button"/>
+            </li>
+        </ul>
+    </form>
+</div>
+{% endblock %}

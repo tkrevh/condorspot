@@ -1,0 +1,53 @@
+{% extends "index.html" %}{% block header %}{% include "index_sprint_header.html" %}{% endblock %}{% block content %}
+<div id="content">
+    <h1>Current Sprint leaders</h1>
+    {% if event %}<p><strong>Sprint {{event.name}}</strong>, {{event.from_date|date:"d.m.Y"}} - {{event.to_date|date:"d.m.Y"}}</p>{% endif %} 
+    <fieldset class="fs">
+        <div class="fd nbb">{% if current_leaders_list %}{% for eid, cid, entry in current_leaders_list %}
+            <table class="tw twa">{% for class, result in entry.items %}
+                <tr><td colspan="3"><strong>{{class}}</strong></td></tr>
+                <tr><td style="width:4px;">&nbsp;</td><td style="width:110px;">&nbsp;</td><td>km/h</td></tr>
+                {% for leader in result %}
+                <tr class="{% cycle "t0" "t1" %}{% ifequal forloop.counter 1%} trs1{%endifequal%}{% ifequal forloop.counter 2%} trs2{%endifequal%}{% ifequal forloop.counter 3%} trs3{%endifequal%}">{%ifequal leader.firstname None %}<td colspan="3">&nbsp;</td>{%else%}<td>{{forloop.counter}}.</td><td>{{leader.firstname|first|capfirst}}.{{leader.lastname|lower|capfirst|slice:":12"}}</td><td>{{leader.speed}}</td>{% endifequal %}</tr>
+                {% endfor %}
+                <tr><td colspan="3"><a href="/sprint/{{eid}}/{{cid}}">results</a><a href="/sprint/{{eid}}/{{cid}}/?x100">task</a></td></tr>
+                {% endfor %}
+            </table>
+            {% endfor %}{% else %}<p>No current Sprint leaders available yet.</p> {% endif %}
+        </div>
+    </fieldset>
+    <h1>&nbsp;</h1>
+    <h1>Servers status</h1>
+    <fieldset class="fs">
+    <div class="fd nbb" id="dss">
+        <p><img id="pi" src="/media/condorspot/img/preloader.gif" alt="Fetching servers info from master server."/>Fetching servers info from master server</p>
+    </div>
+    </fieldset>
+    <h1>&nbsp;</h1>
+    <h1>Previous Sprint winners</h1>
+    <fieldset class="fs">
+        {% if previous_winners_list %}
+        {% for events in previous_winners_list %}
+        <div class="fd{% if forloop.last %} nbb{% endif %}">
+            {% for event, classes in events.items %}
+                <p><strong>Sprint {{event.id}}</strong>, {{event.from_date|date:"d.m.Y"}} - {{event.to_date|date:"d.m.Y"}}</p>
+                {% for class in classes %}
+                    {% for cid, results in class.items %}
+                        <table class="tw twc">
+                        {% for cname, result in results.items %}
+                            <tr><td colspan="3"><strong>{{cname}}</strong></td></tr>
+                            <tr><td style="width:4px;">&nbsp;</td><td style="width:110px;">&nbsp;</td><td>km/h</td></tr>
+                            {% for entry in result %}
+                            <tr class="{% cycle "t1" "t0" "t1" %}"><td class="tw{{forloop.counter}}"></td><td>{{entry.firstname|first|capfirst}}.{{entry.lastname|lower|capfirst|slice:":12"}}</td><td>{{entry.speed}}km/h</td></tr>
+                            {% endfor %}
+                            <tr><td colspan="3"><a href="/sprint/{{event.id}}/{{cid}}">results</a><a href="/sprint/{{event.id}}/{{cid}}/?x100">task</a></td></tr>
+                        {% endfor %}
+                        </table>
+                    {% endfor %}
+                {% endfor %}
+            {% endfor %}
+        </div>
+        {% endfor %}
+        {% else %}<p>No Sprint winners available yet.</p>{% endif %}
+    </fieldset>
+</div>{% endblock %}

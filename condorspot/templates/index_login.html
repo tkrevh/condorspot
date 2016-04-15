@@ -1,0 +1,37 @@
+{% extends "index.html" %}{% block header %}{% include "index_header.html" %}{% endblock %}{% block content %}
+<div id="content">
+<h1 style="color:red; margin-left:7px;">Coming soon.</h1>
+    <fieldset class="ffs">
+        <form name="formname" method="post" action="">
+            <ul class="ful fulnb">
+                <li>
+                    <h1>Login</h1>
+                </li>
+            </ul>
+            <ul class="ful">
+                <li>
+                    <h1>Login data</h1>
+                </li>
+                <li>
+                    <div class="label"><label for="email">Email<em>*</em></label></div>
+                    <input type="text" name="email" id="email"/>
+                </li>
+                <li>
+                    <div class="label"><label for="password">Password<em>*</em></label></div>
+                    <input type="password" name="password" id="password"/>
+                </li>
+                <li>
+                    <div class="label"><label for="rm">Remember me&nbsp;&nbsp;</label></div>
+                    <input type="checkbox" class="checkbox" name="rm" id="rm"/>
+                </li>
+            </ul>
+            <ul class="ful fulnb">
+                <li>
+                    <div class="label">&nbsp;</div>
+                    <input type="submit" name="login" id="login" value="login" class="button"/>
+                </li>
+            </ul>
+        </form>
+    </fieldset>
+</div>
+{% endblock %}

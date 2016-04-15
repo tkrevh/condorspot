@@ -1,0 +1,547 @@
+/*
+@description:
+    theme: default condorspot.com theme
+    theme was designed for http://condorspot.com
+@version:   0.1
+@uri:   http://condorspot.com/
+@copyright: Gregor Ambrozic
+@author:    Gregor Ambrozic
+@author-uri:    http://insane.si
+*/
+
+/* GLOBAL STYLES */
+
+html {
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 5px 0 0 0;
+  padding: 0;
+  overflow-y: scroll;
+  text-align: center;
+  color: black;
+  font-weight: normal;
+  font-style: normal;
+  font-family: Tahoma, sans-serif;
+  font-size: 70%;
+  letter-spacing: 0.06em;
+  line-height: 1.4em;
+}
+
+#top, #header, #nav, #content, #footer {
+  margin: 0 auto;
+  width: 960px;
+}
+
+h1 {
+  font-size: 1.2em;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  outline: 0;
+  outline-style: none;
+  padding: 0 4px;
+  text-decoration: none;
+  color: darkorange;
+  border: 1px solid transparent;
+}
+
+/* COLORS */
+
+.darkorange {
+  color: darkorange;
+}
+
+a:hover {
+  background-color: #fff;
+  color: darkred;
+}
+
+/* LOGO STYLES */
+
+#logo {
+  position: relative;
+  top: 20px;
+  right: 16px;
+  font-size: 3em;
+  font-weight: bold;
+  text-align: right;
+  letter-spacing: 0.1em;
+  width: 300px;
+  float: right;
+}
+
+/* TOP STYLES */
+
+#top {
+  margin: 0 auto;
+  padding: 5px 0;
+  text-align: right;
+  height: 14px;
+  border: 0;
+}
+
+/* HEADER STYLES */
+
+#header {
+  text-align: left;
+  border: 1px solid #ccc;
+  border-bottom: 2px solid black;
+  -moz-border-radius: 10px 10px 0 0;
+  padding-bottom: 5px;
+}
+
+/* NAV STYLES */
+
+#nav {
+  margin: 0 auto;
+  padding: 10px;
+  width: 950px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.comp {
+  margin: 10px;
+  width: 400px;
+  clear: left;
+  -moz-border-radius: 5px 0 5px 0;
+  border: 1px solid #ccc;
+  height: 74px;
+}
+
+.comp ul {
+  list-style: none;
+  margin: 0;
+  float: left;
+  padding: 20px 0 0 0;
+}
+
+.comp li, .comp li {
+  list-style: none;
+  white-space: nowrap;
+}
+
+.comp:hover {
+  background-color: #e9e8e8;
+}
+
+.cname {
+  color: #fff;
+  text-align: center;
+  width: 84px;
+  height: 54px;
+  -webkit-border-radius: 3px 0 0 0;
+  -moz-border-radius: 3px 0 0 0;
+  font-size: 1em;
+  background: darkorange;
+}
+
+.cname li em {
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 2em;
+  letter-spacing: 0.2em;
+}
+
+.cnav li em {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.4em;
+  padding-left: 5px;
+}
+
+.cnav li {
+  font-weight: bold;
+  margin: 0 0 5px 10px;
+  padding: 0;
+}
+
+.cnav li a {
+  padding: 2px 5px;
+}
+
+/* ACCOUNT STYLES */
+
+#account {
+  text-align: right;
+  margin: -26px 14px 8px 4px;
+  font-weight: bold;
+}
+
+/* CONTENT STYLES */
+
+#content {
+  height: auto !important;
+  height: 800px;
+  min-height: 720px;
+  position: relative;
+  text-align: left;
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 5px 0 10px 0;
+  border: 1px solid #ccc;
+  border-top: 0;
+  -moz-border-radius: 0 0 10px 10px;
+}
+
+#content p, #content h1, #content table {
+  padding: 5px 10px;
+}
+
+/* FOOTER STYLES */
+#footer {
+  margin: 0 auto;
+  padding: 5px 0 10px 0;
+  background-color: #fff;
+}
+
+/* NEWS STYLES */
+#news {
+  display: inline;
+  display: inline-table !important;
+  float: none !important;
+  float: left;
+}
+
+/* STATS STYLES */
+.stat {
+  width: 298px !important;
+  width: 306px;
+}
+
+/* SPONSORS STYLES */
+#sponsors {
+  width: 938px;
+}
+
+#stats, .stat, #sponsors, .sponsor {
+  display: inline;
+  display: inline-table !important;
+  float: none !important;
+  float: left;
+}
+
+#sponsors, .stats {
+  margin: 10px;
+}
+
+.stat {
+  margin: 10px;
+}
+
+.sponsor {
+  margin: 4px;
+}
+
+.stat dl {
+  padding: 0 0 0 10px;
+}
+
+.stat dt {
+  font-weight: bold;
+}
+
+.stat dd {
+  margin: 0 0 0 10px;
+  padding: 0;
+}
+
+.stat, #sponsors {
+  background-color: #fff;
+  -moz-border-radius: 5px !important;
+  border: 1px solid #ccc;
+}
+
+/* TABLE STYLES */
+.tablewrapper {
+  margin: 5px;
+  border: 1px solid #ccc;
+  -moz-border-radius: 5px !important;
+}
+
+.classes {
+  float: right;
+  position: absolute;
+  right: 86px;
+  top: 25px;
+  height: 22px;
+  border: 1px solid #ccc;
+  border-bottom: 0;
+  padding-top: 5px;
+}
+
+.selclass {
+  background-color: #e9e8e8;
+}
+
+.classes a {
+  padding: 6px 30px;
+  margin: 0;
+  text-align: center;
+}
+
+.classes a:hover {
+  padding: 6px 30px;
+  background-color: #e9e8e8;
+  color: darkorange;
+}
+
+#results {
+  width: 100%;
+  text-transform: capitalize;
+  border-collapse: collapse;
+  margin: 0 0 5px 0;
+  white-space: nowrap;
+}
+
+thead {
+  font-size: 0.9em;
+  background-color: #dfdddd;
+  text-transform: uppercase;
+}
+
+#results tr:hover {
+  background-color: #ffe3b1;
+  cursor: pointer;
+}
+
+#results .tr0:hover {
+  background-color: transparent;
+}
+
+#results td, #results th {
+  padding: 2px 2px;
+  border-left: 1px solid #ccc;
+}
+
+#results th {
+  padding: 2px 15px 2px 5px;
+}
+
+#results td, #results th {
+  text-align: center; /* all to center*/
+}
+
+#results .tb, #results .tc {
+  text-align: left; /* exceptions to left */
+}
+
+#results .tb {
+  text-transform: uppercase; /*uppercase CN*/
+}
+
+#results .t0 {
+  background-color: white;
+}
+
+#results .t1 {
+  background-color: #f7f6f6;
+}
+
+.header {
+  background: url( "../img/tbg.gif" ) no-repeat right center;
+  cursor: pointer;
+}
+
+.asc {
+  background: url( "../img/tasc.gif" ) no-repeat center right;
+  cursor: pointer;
+}
+
+.desc {
+  cursor: pointer;
+  background: url( "../img/tdesc.gif" ) no-repeat center right;
+}
+
+/* LISTS STYLES */
+.ful {
+  -moz-border-radius: 5px !important;
+  background-color: #e9e8e8;
+  border: 1px solid #ccc;
+  margin: 10px;
+  padding: 5px;
+  width: 600px;
+}
+
+.ful li {
+  list-style: none;
+  padding: 2px;
+}
+
+.task {
+  background-color: #e9e8e8;
+  -moz-border-radius: 0 0 5px 5px !important;
+  border-top: 1px solid #ccc;
+  display: block;
+  width: 928px !important;
+  width: 940px;
+  height: 500px !important;
+  height: 500px;
+  margin: 0;
+  padding: 10px;
+}
+
+.task li {
+  list-style: none;
+  padding: 2px;
+  font-weight: normal;
+  text-align: left;
+  width: 186px;
+  position: relative;
+  left: 90px;
+}
+
+.task li span {
+  width: 140px;
+  text-align: right;
+  position: absolute;
+  left: -144px;
+  font-weight: bold;
+}
+
+.taskimg {
+  position: absolute;
+  right: 20px;
+  top: 100px !important;
+  top: 100px;
+}
+
+/* FORUM STYLES */
+form input, form textarea, form select, #filter {
+  width: 430px;
+  height: auto !important;
+  height: 24px;
+  margin: 0;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+#spanfilter input {
+  width: 200px;
+}
+
+form input[type="submit"]:hover, form input[type="button"]:hover {
+  border-width: 1px;
+}
+
+form input:hover, form textarea:hover, form select:hover {
+  border: 1px solid #b3b2b2;
+}
+
+form input:focus, form textarea:focus, form select:focus {
+  border: 1px solid #7d7c7c;
+}
+
+form select {
+  width: 442px !important;
+  width: 430px;
+}
+
+.checkbox {
+  width: auto;
+  padding: 2px;
+  margin: 2px 1px !important;
+  vertical-align: -3px !important;
+}
+
+.button {
+  background-color: #b3b2b2;
+  text-transform: uppercase;
+  font-size: 0.85em;
+  -moz-border-radius: 5px !important;
+  width: auto;
+  padding: 4px;
+  margin: 2px 4px;
+}
+
+.button:active {
+  padding: 5px;
+  margin: 1px 3px;
+  border: 1px solid #b3b2b2;
+}
+
+#file {
+  position: relative;
+  left: -134px !important;
+  left: -368px;
+  top: 2px !important;
+  top: 0px;
+  cursor: pointer;
+  opacity: 0;
+  -moz-opacity: 0;
+  filter: progid: DXImageTransform . Microsoft . Alpha( opacity = 0 );
+}
+
+#labelfile {
+  height: 25px;
+  width: 62px;
+  display: inline;
+  display: inline-table !important;
+  background: url( "../img/btnb.gif" ) 0 0 no-repeat;
+  overflow: hidden;
+}
+
+#labelfile:hover {
+  background: url( "../img/btnb-o.gif" ) 0 0 no-repeat;
+}
+
+#filevalue {
+  height: 24px;
+  white-space: nowrap;
+  margin-left: 148px !important;
+  margin-left: 0;
+}
+
+.forminfo {
+  position: absolute;
+  display: inline;
+  margin: -20px 0 0 -5px;
+  -moz-border-radius: 5px 5px 5px 0 !important;
+  background-color: #ffe3b1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  white-space: nowrap;
+}
+
+/* RANDOM STYLES */
+.label {
+  width: 140px;
+  display: inline;
+  display: inline-table !important;
+  float: none !important;
+  float: left;
+  text-align: right;
+  vertical-align: 5% !important;
+  margin: 4px 2px;
+}
+
+#spanfilter {
+  position: absolute;
+  right: 10px;
+  top: 80px;
+}
+
+.taskpic {
+  position: absolute;
+  margin: -20px 0 0 570px;
+  -moz-border-radius: 5px !important;
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #990000;
+  white-space: nowrap;
+  width: 390px;
+  height: 538px;
+}
+
+#overlayedpicture {width:100%; height: 100%; background-color:#ffffff;}
+#overlayedpicture a.small, #overlayedpicture a.small:visited { display:block; width:99px; height:150px; text-decoration:none; background:#ffffff; top:0; left:0; border:0;}
+#overlayedpicture a img {border:1px solid #990000}
+#overlayedpicture a .large {display:block; position:absolute; width:0; height:0; border:0; top:0; left:0;}
+#overlayedpicture a.small:hover .large {display:block; position:absolute; top: 0px; left:150px; width:467px; height:677px; } 

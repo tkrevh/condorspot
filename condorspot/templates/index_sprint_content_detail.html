@@ -1,0 +1,109 @@
+{% extends "index.html" %}{% block header %}{% include "index_sprint_header.html" %}{% endblock %}{% block content %}
+<div id="content">
+    <fieldset class="fs" id="fst">
+        <h1 id="lt">Task Sprint {{event}}</h1>
+        <div id="st">{% if task %}
+            <div id="stl">
+                <ul id="std">
+                    <li><span>Landscape</span>{{task.landscape}}</li>
+                    <li><span>Class</span>{{task.competition_class}}</li>
+                    <li>&nbsp;</li>
+                    <li><span>Wind</span>&nbsp;</li>
+                    <li><span>Dir / Speed</span>{{task.wind_direction}}&deg;/{{task.wind_speed}}m/s</li>
+                    <li>&nbsp;</li>
+                    <li><span>Thermals</span>&nbsp;</li>
+                    <li><span>Temp.</span>{{task.thermals_temp}}&deg;</li>
+                    <li><span>Dew point</span>{{task.thermals_dew}}&deg;</li>
+                    <li><span>Inversion</span>{{task.thermals_inversion}}m</li>
+                    <li><span>Pressure</span>{{task.pressure}}mB</li>
+                    <li>&nbsp;</li>
+                    <li><span>Task</span>&nbsp;</li>
+                    <li><span>Type</span>{% ifequal task.start_window 0 %}Regata{% else %}Speedtask{%endifequal%}</li>
+                    <li>&nbsp;</li>
+                    {% if turnpoints_list %}{% for tp in turnpoints_list %}<li><span>{%if forloop.first%}Start{% else %}{%if forloop.last%}Finish{% else %}TP{{forloop.counter0}}{% endif %}{% endif %}</span>{{tp.name}}</li>{% endfor %}{% endif %}
+                    <li>&nbsp;</li>
+                    <li><span>Server</span><img id="pi" src="/media/condorspot/img/preloader.gif" alt="Fetching servers info from master server."/>Fetching server info</li>
+                </ul>
+            </div>
+            <div id="str">
+                <span id="pmv"><a id="pmvi" href="#">Image</a><a id="pmvgm" href="#">GoogleMaps</a></span>
+                <div id="pmvc"><img id="taskimg" src="/media/{{task.picture}}" alt="{% for tp in turnpoints_list %}{{tp.name}}{% if not forloop.last%}, {%endif%}{% endfor %}" title="{% for tp in turnpoints_list %}{{tp.name}}{% if not forloop.last%}, {%endif%}{% endfor %}"/></div>
+                <input id="pmvv" type="hidden" value="{% if turnpoints_list %}{% for tp in turnpoints_list %}{{tp.xpos}},{{tp.ypos}}{% if not forloop.last%};{%endif%}{% endfor %}{% endif %}"/>
+                {% else %}<p>No task available.</p>{% endif %}
+            </div>
+        </div>
+    </fieldset>
+    <fieldset class="fs" id="fsr">
+        <h1 id="lr">Results Sprint {{event}}</h1>
+        <div id="sr">
+            {% if results_list %}
+            <div id="df"><input type="text" id="filter"/>&nbsp;&nbsp;user this filter to narrow down results view</div>
+            <p>{{results_list|length}} pilots raced this task</p>
+            <table id="results">
+                <thead>
+                <tr>
+                    <th class="ta">pos</th>
+                    <th class="tb">name</th>
+                    <th class="tc">glider</th>
+                    <th class="td">reg.</th>
+                    <th class="te">cn</th>
+                    <th class="tf">duration</th>
+                    <th class="tg">speed</th>
+                    <th class="th">dist.</th>
+                    <th class="ti">date</th>
+                    <th class="tj">status</th>
+                    <th class="tk">tries</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for sprintresult in results_list %}
+                <tr class="{% ifequal forloop.counter 1%} trs1{%endifequal%}{% ifequal forloop.counter 2%} trs2{%endifequal%}{% ifequal forloop.counter 3%} trs3{%endifequal%}">
+                    <td class="ta">{{forloop.counter}}</td>
+                    <td class="tb">{{sprintresult.lastname}} {{sprintresult.firstname}}</td>
+                    <td class="tc">{{sprintresult.glider}}</td>
+                    <td class="td">{{sprintresult.registration_number}}</td>
+                    <td class="te">{{sprintresult.callsign}}</td>
+                    <td class="tf">{{sprintresult.time}}</td>
+                    <td class="tg">{{sprintresult.speed}}</td>
+                    <td class="th">{{sprintresult.distance}}</td>
+                    <td class="ti">{{sprintresult.date|date:"d.m.y H:i"}}</td>
+                    <td class="tj{% ifequal sprintresult.status "Finished" %} trsf{%endifequal%}{% ifequal sprintresult.status "Landed"%} trso{%endifequal%}{% ifequal sprintresult.status "Crashed" %} trsc{%endifequal%}{% ifequal sprintresult.status "Racing" %} trsc{%endifequal%}">&nbsp;</td>
+                    <td class="tk">{{sprintresult.tries}}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <table>
+                <tbody>
+                <tr>
+                    <td colspan="11" class="tb"><strong>Legend:</strong></td>
+                </tr>
+                <tr>
+                    <td class="tj trsf">&nbsp;</td>
+                    <td colspan="10" class="tb">Finished</td>
+                </tr>
+                <tr>
+                    <td class="tj trso">&nbsp;</td>
+                    <td colspan="10" class="tb">Outlanded</td>
+                </tr>
+                <tr>
+                    <td class="tj trsc">&nbsp;</td>
+                    <td colspan="10" class="tb">Crashed</td>
+                </tr>
+                </tbody>
+            </table>
+            {% else %}<p>No results are available.</p> {% endif %}
+        </div>
+    </fieldset>
+    <fieldset class="fs" id="fsl">
+        <h1 id="ll">Previous sprints</h1>
+        <div id="sl">{% if history_list %}
+            <ul class="slb">
+                {% for event in history_list %}
+                <li><a href="/sprint/{{event.name}}/{{class}}">Sprint {{event.name}}, ({{event.from_date|date:"d.m.Y"}} - {{event.to_date|date:"d.m.Y"}})</a></li>
+                {% endfor %}
+            </ul>
+            {% else %}<p>No previous sprints yet.</p> {% endif %}
+        </div>
+    </fieldset>
+</div>{% endblock %}
